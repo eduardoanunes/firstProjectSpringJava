@@ -24,4 +24,10 @@ public class ProdutoService {
     public Produto criar(Produto produto) {
         return this.produtoRepository.save(produto);
     }
+
+
+    public void excluirProduto (String id){
+        produtoRepository.deleteById(id);
+
+    }
 }

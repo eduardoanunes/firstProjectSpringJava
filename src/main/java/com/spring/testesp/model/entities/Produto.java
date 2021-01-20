@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Produto {
     @Id
     private String id;
+    @Field("Ref")
+    private int ref;
     @Field("Nome")
     private String nome;
     @Field("Preco")
