@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.springframework.http.HttpStatus.OK;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,9 +31,9 @@ public class ProdutoController {
         return this.produtoService.ObterPorCodigo(id);
     }
 
-    @PostMapping
+    @PostMapping("/criar")
     @ResponseStatus(HttpStatus.CREATED)
-    public Produto criar(@RequestBody Produto produto){
+    public Produto criar(@RequestBody @Valid Produto produto){
         return this.produtoService.criar(produto);
 
     }
@@ -40,6 +42,12 @@ public class ProdutoController {
     public void excluirProduto(@PathVariable String id){
         produtoService.excluirProduto(id);
 
+    }
+    @PutMapping("/alterar")
+    @ResponseStatus(OK)
+    public Produto alterarProduto(@Valid Produto produto){
+        produtoService.criar(produto);
+        return produto;
     }
 
 
