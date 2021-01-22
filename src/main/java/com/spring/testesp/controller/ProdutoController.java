@@ -25,7 +25,7 @@ public class ProdutoController {
         return this.produtoService.obterTodos();
     }
 
-    @GetMapping("/{codigo}")
+    @GetMapping("/obter/{id}")
     @ResponseStatus(OK)
     public Produto obterPorCodigo(@PathVariable String id){
         return this.produtoService.ObterPorCodigo(id);

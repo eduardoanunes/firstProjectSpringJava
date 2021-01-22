@@ -13,15 +13,9 @@ public class Produto {
     @Id
     private String id;
     @Field("Nome")
-    @NotEmpty
     private String nome;
     @Field("Preco")
     private double preco;
     @Field("Quantidade")
     private int quantidade;
-
-
-//    public Produto(String name) {
-//        this.name = name;
-//    }
 }

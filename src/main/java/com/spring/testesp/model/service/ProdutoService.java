@@ -27,7 +27,7 @@ public class ProdutoService {
 
 
     public void excluirProduto (String id){
-        produtoRepository.deleteById(id) ;
+        produtoRepository.deleteById(id);
 
     }
     public Produto alterarProduto(Produto produto){
